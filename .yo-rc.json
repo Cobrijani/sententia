@@ -1,0 +1,14 @@
+{
+  "generator-jhipster": {
+    "appsFolders": [
+      "gateway"
+    ],
+    "directoryPath": "./",
+    "serviceDiscoveryType": "eureka",
+    "jwtSecretKey": "b3075cb301eb51cdfc02de7509a397406fd232ef",
+    "dockerRepositoryName": "cobrijani",
+    "dockerPushCommand": "docker push",
+    "kubernetesNamespace": "default",
+    "kubernetesServiceType": "LoadBalancer"
+  }
+}
