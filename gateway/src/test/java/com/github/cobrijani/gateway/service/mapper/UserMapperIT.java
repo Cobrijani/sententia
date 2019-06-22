@@ -2,9 +2,9 @@ package com.github.cobrijani.gateway.service.mapper;
 
 
 import com.github.cobrijani.gateway.GatewayApp;
-import com.github.cobrijani.gateway.config.TestSecurityConfiguration;
 import com.github.cobrijani.gateway.domain.User;
 import com.github.cobrijani.gateway.service.dto.UserDTO;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,11 +20,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * Integration tests for {@link UserMapper}.
  */
-@SpringBootTest(classes = {GatewayApp.class, TestSecurityConfiguration.class})
+@SpringBootTest(classes = GatewayApp.class)
 public class UserMapperIT {
 
     private static final String DEFAULT_LOGIN = "johndoe";
-    private static final String DEFAULT_ID = "id1";
+    private static final Long DEFAULT_ID = 1L;
 
     @Autowired
     private UserMapper userMapper;
@@ -36,6 +36,7 @@ public class UserMapperIT {
     public void init() {
         user = new User();
         user.setLogin(DEFAULT_LOGIN);
+        user.setPassword(RandomStringUtils.random(60));
         user.setActivated(true);
         user.setEmail("johndoe@localhost");
         user.setFirstName("john");

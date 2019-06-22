@@ -9,7 +9,7 @@
     "packageName": "com.github.cobrijani.gateway",
     "packageFolder": "com/github/cobrijani/gateway",
     "serverPort": "8080",
-    "authenticationType": "oauth2",
+    "authenticationType": "jwt",
     "cacheProvider": "hazelcast",
     "enableHibernateCache": true,
     "websocket": false,
@@ -56,6 +56,7 @@
         "version": "1.0.7"
       }
     ],
-    "enableTranslation": false
+    "enableTranslation": false,
+    "jwtSecretKey": "MDgxNmY3NTUzMjcwODIxOTk1NjMwMjExMGFmNzRjNTE4Yzc3OTdkZWViMDEyOThlOTg4MDI2MDljNzYzYzZmZjAwYjNhOGRkM2FjNGEyZGY1MTJjMmExNzFhYzdiZWE1YmUwN2FlZjI1ZTM0N2YwMjg4ZGY0NmFkM2Y1NjI3ZDc="
   }
 }

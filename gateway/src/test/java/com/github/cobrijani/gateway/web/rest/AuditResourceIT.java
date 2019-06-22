@@ -1,7 +1,6 @@
 package com.github.cobrijani.gateway.web.rest;
 
 import com.github.cobrijani.gateway.GatewayApp;
-import com.github.cobrijani.gateway.config.TestSecurityConfiguration;
 import com.github.cobrijani.gateway.config.audit.AuditEventConverter;
 import com.github.cobrijani.gateway.domain.PersistentAuditEvent;
 import com.github.cobrijani.gateway.repository.PersistenceAuditEventRepository;
@@ -31,7 +30,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 /**
  * Integration tests for the {@link AuditResource} REST controller.
  */
-@SpringBootTest(classes = {GatewayApp.class, TestSecurityConfiguration.class})
+@SpringBootTest(classes = GatewayApp.class)
 @Transactional
 public class AuditResourceIT {
 

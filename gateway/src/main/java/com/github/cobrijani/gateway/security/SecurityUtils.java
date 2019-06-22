@@ -3,9 +3,7 @@ package com.github.cobrijani.gateway.security;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.oauth2.core.oidc.user.DefaultOidcUser;
 
-import java.util.Map;
 import java.util.Optional;
 
 /**
@@ -28,16 +26,23 @@ public final class SecurityUtils {
                 if (authentication.getPrincipal() instanceof UserDetails) {
                     UserDetails springSecurityUser = (UserDetails) authentication.getPrincipal();
                     return springSecurityUser.getUsername();
-                } else if (authentication.getPrincipal() instanceof DefaultOidcUser) {
-                    Map<String, Object> attributes = ((DefaultOidcUser) authentication.getPrincipal()).getAttributes();
-                    if (attributes.containsKey("preferred_username")) {
-                        return (String) attributes.get("preferred_username");
-                    }
                 } else if (authentication.getPrincipal() instanceof String) {
                     return (String) authentication.getPrincipal();
                 }
                 return null;
             });
+    }
+
+    /**
+     * Get the JWT of the current user.
+     *
+     * @return the JWT of the current user.
+     */
+    public static Optional<String> getCurrentUserJWT() {
+        SecurityContext securityContext = SecurityContextHolder.getContext();
+        return Optional.ofNullable(securityContext.getAuthentication())
+            .filter(authentication -> authentication.getCredentials() instanceof String)
+            .map(authentication -> (String) authentication.getCredentials());
     }
 
     /**

@@ -2,7 +2,6 @@ package com.github.cobrijani.gateway.repository;
 
 import com.github.cobrijani.gateway.GatewayApp;
 import com.github.cobrijani.gateway.config.Constants;
-import com.github.cobrijani.gateway.config.TestSecurityConfiguration;
 import com.github.cobrijani.gateway.config.audit.AuditEventConverter;
 import com.github.cobrijani.gateway.domain.PersistentAuditEvent;
 import org.junit.jupiter.api.BeforeEach;
@@ -28,7 +27,7 @@ import static com.github.cobrijani.gateway.repository.CustomAuditEventRepository
 /**
  * Integration tests for {@link CustomAuditEventRepository}.
  */
-@SpringBootTest(classes = {GatewayApp.class, TestSecurityConfiguration.class})
+@SpringBootTest(classes = GatewayApp.class)
 @Transactional
 public class CustomAuditEventRepositoryIT {
 

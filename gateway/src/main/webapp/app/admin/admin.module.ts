@@ -6,6 +6,10 @@ import { GatewaySharedModule } from 'app/shared';
 import {
   adminState,
   AuditsComponent,
+  UserMgmtComponent,
+  UserMgmtDetailComponent,
+  UserMgmtUpdateComponent,
+  UserMgmtDeleteDialogComponent,
   LogsComponent,
   JhiMetricsMonitoringComponent,
   JhiHealthModalComponent,
@@ -23,6 +27,10 @@ import {
   ],
   declarations: [
     AuditsComponent,
+    UserMgmtComponent,
+    UserMgmtDetailComponent,
+    UserMgmtUpdateComponent,
+    UserMgmtDeleteDialogComponent,
     LogsComponent,
     JhiConfigurationComponent,
     JhiHealthCheckComponent,
@@ -31,7 +39,7 @@ import {
     JhiGatewayComponent,
     JhiMetricsMonitoringComponent
   ],
-  entryComponents: [JhiHealthModalComponent],
+  entryComponents: [UserMgmtDeleteDialogComponent, JhiHealthModalComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class GatewayAdminModule {}

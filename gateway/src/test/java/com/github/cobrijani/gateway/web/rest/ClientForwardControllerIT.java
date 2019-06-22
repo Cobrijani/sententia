@@ -1,7 +1,6 @@
 package com.github.cobrijani.gateway.web.rest;
 
 import com.github.cobrijani.gateway.GatewayApp;
-import com.github.cobrijani.gateway.config.TestSecurityConfiguration;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -20,7 +19,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 /**
  * Integration tests for the {@link ClientForwardController} REST controller.
  */
-@SpringBootTest(classes = {GatewayApp.class, TestSecurityConfiguration.class})
+@SpringBootTest(classes = GatewayApp.class)
 public class ClientForwardControllerIT {
 
     private MockMvc restMockMvc;

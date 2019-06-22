@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 
 import { VERSION } from 'app/app.constants';
-import { AccountService, LoginService } from 'app/core';
+import { AccountService, LoginModalService, LoginService } from 'app/core';
 import { ProfileService } from 'app/layouts/profiles/profile.service';
 
 @Component({
@@ -15,11 +16,13 @@ export class NavbarComponent implements OnInit {
   isNavbarCollapsed: boolean;
   languages: any[];
   swaggerEnabled: boolean;
+  modalRef: NgbModalRef;
   version: string;
 
   constructor(
     private loginService: LoginService,
     private accountService: AccountService,
+    private loginModalService: LoginModalService,
     private profileService: ProfileService,
     private router: Router
   ) {
@@ -43,7 +46,7 @@ export class NavbarComponent implements OnInit {
   }
 
   login() {
-    this.loginService.login();
+    this.modalRef = this.loginModalService.open();
   }
 
   logout() {

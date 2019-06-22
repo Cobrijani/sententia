@@ -122,6 +122,14 @@ jhipster:
     exposed-headers: 'Authorization,Link,X-Total-Count'
     allow-credentials: true
     max-age: 1800
+  security:
+    authentication:
+      jwt:
+        # This token must be encoded using Base64 and be at least 256 bits long (you can type `openssl rand -base64 64` on your command line to generate a 512 bits one)
+        base64-secret: MDgxNmY3NTUzMjcwODIxOTk1NjMwMjExMGFmNzRjNTE4Yzc3OTdkZWViMDEyOThlOTg4MDI2MDljNzYzYzZmZjAwYjNhOGRkM2FjNGEyZGY1MTJjMmExNzFhYzdiZWE1YmUwN2FlZjI1ZTM0N2YwMjg4ZGY0NmFkM2Y1NjI3ZDc=
+        # Token is valid 24 hours
+        token-validity-in-seconds: 86400
+        token-validity-in-seconds-for-remember-me: 2592000
   mail: # specific JHipster mail property, for standard properties see MailProperties
     from: gateway@localhost
     base-url: http://127.0.0.1:8080
