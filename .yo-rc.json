@@ -9,6 +9,9 @@
     "dockerRepositoryName": "cobrijani",
     "dockerPushCommand": "docker push",
     "kubernetesNamespace": "default",
-    "kubernetesServiceType": "LoadBalancer"
+    "kubernetesServiceType": "LoadBalancer",
+    "ingressDomain": "",
+    "monitoring": "no",
+    "istio": false
   }
 }

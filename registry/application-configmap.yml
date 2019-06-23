@@ -24,10 +24,10 @@ data:
       security:
         authentication:
           jwt:
-            secret: b3075cb301eb51cdfc02de7509a397406fd232ef
+            base64-secret: b3075cb301eb51cdfc02de7509a397406fd232effasb3075cb301eb51cdfc02de7509a397406fd232effas
   # app specific configuration
   jhipster-registry.yml: |-
     eureka:
       client:
         service-url:
-          defaultZone: http://admin:${jhipster.registry.password}@jhipster-registry-0.jhipster-registry.default.svc.cluster.local:8761/eureka/,http://admin:${jhipster.registry.password}@jhipster-registry-1.jhipster-registry.default.svc.cluster.local:8761/eureka/
+          defaultZone: http://admin:${spring.security.user.password}@jhipster-registry-0.jhipster-registry.default.svc.cluster.local:8761/eureka/,http://admin:${spring.security.user.password}@jhipster-registry-1.jhipster-registry.default.svc.cluster.local:8761/eureka/
