@@ -4,4 +4,4 @@ ports:
   - port: 9000
   - port: 3001
 tasks:
-  - command: "npm install && ./mvnw"
+  - command: "cd gateway && npm install"
