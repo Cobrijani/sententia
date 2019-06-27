@@ -10,3 +10,6 @@ RUN echo "deb https://apt.dockerproject.org/repo debian-jessie main" | tee /etc/
     echo 'Defaults  env_keep += "HOME"' >> /etc/sudoers && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
+
+
+RUN npm i -g husky
