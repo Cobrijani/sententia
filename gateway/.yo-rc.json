@@ -3,7 +3,7 @@
     "promptValues": {
       "packageName": "com.github.cobrijani.gateway"
     },
-    "jhipsterVersion": "6.1.1",
+    "jhipsterVersion": "6.1.2",
     "applicationType": "gateway",
     "baseName": "gateway",
     "packageName": "com.github.cobrijani.gateway",
