@@ -1,4 +1,5 @@
-image: jhipster/jhipster
+image:
+  file: .gitpod.dockerfile
 ports:
   - port: 8080
   - port: 9000
