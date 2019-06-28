@@ -24,7 +24,7 @@
     "useSass": true,
     "clientPackageManager": "npm",
     "clientFramework": "angularX",
-    "clientTheme": "flatly",
+    "clientTheme": "cerulean",
     "clientThemeVariant": "primary",
     "testFrameworks": ["gatling"],
     "jhiPrefix": "jhi",
