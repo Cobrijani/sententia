@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gateway
+  name: blog
   namespace: default
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: gateway
+      app: blog
       version: 'v1'
   template:
     metadata:
       labels:
-        app: gateway
+        app: blog
         version: 'v1'
     spec:
       initContainers:
@@ -24,7 +24,7 @@ spec:
             - |
               while true
               do
-                rt=$(nc -z -w 1 gateway-postgresql 5432)
+                rt=$(nc -z -w 1 blog-mongodb 27017)
                 if [ $? -eq 0 ]; then
                   echo "DB is UP"
                   break
@@ -33,8 +33,8 @@ spec:
                 sleep 10
               done
       containers:
-        - name: gateway-app
-          image: cobrijani/gateway
+        - name: blog-app
+          image: cobrijani/blog
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: prod
@@ -47,34 +47,29 @@ spec:
                   key: registry-admin-password
             - name: EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE
               value: http://admin:${jhipster.registry.password}@jhipster-registry.default.svc.cluster.local:8761/eureka/
-            - name: SPRING_DATASOURCE_URL
-              value: jdbc:postgresql://gateway-postgresql.default.svc.cluster.local:5432/gateway
-            - name: SPRING_DATASOURCE_USERNAME
-              value: gateway
-            - name: SPRING_DATASOURCE_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: gateway-postgresql
-                  key: postgresql-password
+            - name: SPRING_DATA_MONGODB_DATABASE
+              value: blog
+            - name: SPRING_DATA_MONGODB_URI
+              value: 'mongodb://blog-mongodb-0.blog-mongodb.default:27017,blog-mongodb-1.blog-mongodb.default:27017,blog-mongodb-2.blog-mongodb.default:27017'
             - name: SPRING_SLEUTH_PROPAGATION_KEYS
               value: 'x-request-id,x-ot-span-context'
             - name: JAVA_OPTS
               value: ' -Xmx256m -Xms256m'
-          #          resources:
-          #            requests:
-          #              memory: '512Mi'
-          #              cpu: ''
-          #            limits:500m
-          #              memory: '1Gi'
-          #              cpu: '1'
+          resources:
+            requests:
+              memory: '512Mi'
+              cpu: '500m'
+            limits:
+              memory: '1Gi'
+              cpu: '1'
           ports:
             - name: http
-              containerPort: 8080
+              containerPort: 8082
           readinessProbe:
             httpGet:
               path: /management/health
               port: http
-            initialDelaySeconds: 60
+            initialDelaySeconds: 20
             periodSeconds: 15
             failureThreshold: 6
           livenessProbe:

@@ -1,0 +1,21 @@
+{
+  "generator-jhipster": {
+    "appsFolders": [
+      "blog-app",
+      "gateway"
+    ],
+    "directoryPath": "../",
+    "clusteredDbApps": [
+      "blog-app"
+    ],
+    "serviceDiscoveryType": "eureka",
+    "jwtSecretKey": "MTIzOWJkY2E3YjUzMjlkZDNmYzk2NTI0YjcxOGRjNjRiMWY5ZmZkOGI1MzcyNTQ1MWU3NjYzOTZlMjg1Yzg3ZTUzNjBlNTVkMTk5MDc2MWEzNzc2MDcwY2ZkNTE2NzQyMWQ2Mg==",
+    "dockerRepositoryName": "cobrijani",
+    "dockerPushCommand": "docker push",
+    "kubernetesNamespace": "default",
+    "kubernetesServiceType": "LoadBalancer",
+    "ingressDomain": "",
+    "monitoring": "no",
+    "istio": false
+  }
+}
