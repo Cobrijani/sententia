@@ -17,7 +17,7 @@ logging:
   level:
     ROOT: DEBUG
     io.github.jhipster: DEBUG
-    com.github.cobrijani.gateway: DEBUG
+    com.github.cobrijani.sententia: DEBUG
 
 eureka:
   instance:
