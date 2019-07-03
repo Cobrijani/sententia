@@ -1,7 +1,7 @@
 {
   "generator-jhipster": {
     "promptValues": {
-      "packageName": "com.github.cobrijani.gateway"
+      "packageName": "com.github.cobrijani.sententia"
     },
     "jhipsterVersion": "6.1.2",
     "applicationType": "gateway",
