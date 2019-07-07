@@ -1,6 +1,6 @@
 /** Entity representing a blog */
 entity Blog {
-	id String
+    id String
 	title String
     type Markup
     category String
@@ -10,12 +10,9 @@ entity Blog {
     modified ZonedDateTime
     content TextBlob
 }
-
 enum Markup {
-	PLAIN, HTML, MARKDOWN
+    PLAIN, HTML, MARKDOWN
 }
-
-
 dto Blog with mapstruct
 service Blog with serviceImpl
 paginate Blog with pagination
