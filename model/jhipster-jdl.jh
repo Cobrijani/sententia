@@ -1,0 +1,23 @@
+/** Entity representing a blog */
+entity Blog {
+	id String
+	title String
+    type Markup
+    category String
+    authorId String
+    authorName String
+    created ZonedDateTime
+    modified ZonedDateTime
+    content TextBlob
+}
+
+enum Markup {
+	PLAIN, HTML, MARKDOWN
+}
+
+
+dto Blog with mapstruct
+service Blog with serviceImpl
+paginate Blog with pagination
+microservice Blog with blog
+microservice Blog with gateway
