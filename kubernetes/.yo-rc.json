@@ -1,0 +1,23 @@
+{
+  "generator-jhipster": {
+    "deploymentType": "kubernetes",
+    "gatewayType": "zuul",
+    "monitoring": "no",
+    "directoryPath": "../",
+    "appsFolders": [
+      "blog",
+      "follower",
+      "sentway"
+    ],
+    "clusteredDbApps": [],
+    "consoleOptions": [],
+    "serviceDiscoveryType": "eureka",
+    "dockerRepositoryName": "cobrijani",
+    "dockerPushCommand": "docker push",
+    "kubernetesNamespace": "sententia",
+    "kubernetesServiceType": "LoadBalancer",
+    "ingressDomain": "",
+    "istio": false,
+    "jwtSecretKey": "M2JjMTE2M2I4MjRlZjgwZDkyZTViMzc1MTRlYWU2Mzk4ZTZiYzEzZjdmNWU0M2VmMmI4YmRkOWQxMDU4NWYyMWU1ZjkxYzg0NDc1NTk2Njc4OGE5ZWU4ZGZjN2M5ZTRlMGM1Zg=="
+  }
+}

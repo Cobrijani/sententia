@@ -1,0 +1,19 @@
+{
+  "generator-jhipster": {
+    "deploymentType": "docker-compose",
+    "gatewayType": "zuul",
+    "monitoring": "no",
+    "directoryPath": "../",
+    "appsFolders": [
+      "blog",
+      "follower",
+      "sentway"
+    ],
+    "clusteredDbApps": [],
+    "consoleOptions": [],
+    "serviceDiscoveryType": "eureka",
+    "dockerRepositoryName": "cobrijani",
+    "dockerPushCommand": "docker push",
+    "jwtSecretKey": "OWQ2ODhjNjRhMTEwZDk2ZDEzZWY5OWE5ZDQzNjIxZDJkMTYxYTNhNmNhOWY5YjM2ZmY3ZDM2MGQzMmIwY2Q2MWYyYWUwYzcwNmY5ZjVjN2IxZmM4YzhlNmRiY2VkZGRhZGQ0NQ=="
+  }
+}

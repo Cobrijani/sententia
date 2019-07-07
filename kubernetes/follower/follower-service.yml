@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: follower
+  namespace: sententia
+  labels:
+    app: follower
+spec:
+  selector:
+    app: follower
+  ports:
+    - name: http
+      port: 8082

@@ -61,7 +61,7 @@ spring:
         enabled: true
 
 server:
-  port: 8083
+  port: 8082
 
 # ===================================================================
 # JHipster specific properties
@@ -97,7 +97,7 @@ jhipster:
         token-validity-in-seconds-for-remember-me: 2592000
   mail: # specific JHipster mail property, for standard properties see MailProperties
     from: follower@localhost
-    base-url: http://127.0.0.1:8083
+    base-url: http://127.0.0.1:8082
   metrics:
     logs: # Reports metrics in the logs
       enabled: false
