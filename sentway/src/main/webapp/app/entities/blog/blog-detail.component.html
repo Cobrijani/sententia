@@ -1,0 +1,55 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="blog">
+            <h2><span jhiTranslate="sentwayApp.blog.detail.title">Blog</span> {{blog.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="sentwayApp.blog.title">Title</span></dt>
+                <dd>
+                    <span>{{blog.title}}</span>
+                </dd>
+                <dt><span jhiTranslate="sentwayApp.blog.type">Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'sentwayApp.Markup.' + blog.type}}">{{blog.type}}</span>
+                </dd>
+                <dt><span jhiTranslate="sentwayApp.blog.category">Category</span></dt>
+                <dd>
+                    <span>{{blog.category}}</span>
+                </dd>
+                <dt><span jhiTranslate="sentwayApp.blog.authorId">Author Id</span></dt>
+                <dd>
+                    <span>{{blog.authorId}}</span>
+                </dd>
+                <dt><span jhiTranslate="sentwayApp.blog.authorName">Author Name</span></dt>
+                <dd>
+                    <span>{{blog.authorName}}</span>
+                </dd>
+                <dt><span jhiTranslate="sentwayApp.blog.created">Created</span></dt>
+                <dd>
+                    <span>{{blog.created}}</span>
+                </dd>
+                <dt><span jhiTranslate="sentwayApp.blog.modified">Modified</span></dt>
+                <dd>
+                    <span>{{blog.modified}}</span>
+                </dd>
+                <dt><span jhiTranslate="sentwayApp.blog.content">Content</span></dt>
+                <dd>
+                    <span>{{blog.content}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/blog', blog.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

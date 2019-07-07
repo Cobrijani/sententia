@@ -1,0 +1,56 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: sentway-postgresql
+  namespace: sententia
+  labels:
+    app: sentway-postgresql
+type: Opaque
+data:
+  postgresql-password: NTBjenVzZm4=
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sentway-postgresql
+  namespace: sententia
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sentway-postgresql
+  template:
+    metadata:
+      labels:
+        app: sentway-postgresql
+    spec:
+      volumes:
+        - name: data
+          emptyDir: {}
+      containers:
+        - name: postgres
+          image: postgres:11.3
+          env:
+            - name: POSTGRES_USER
+              value: sentway
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: sentway-postgresql
+                  key: postgresql-password
+          ports:
+            - containerPort: 5432
+          volumeMounts:
+            - name: data
+              mountPath: /var/lib/postgresql/
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sentway-postgresql
+  namespace: sententia
+spec:
+  selector:
+    app: sentway-postgresql
+  ports:
+    - port: 5432
