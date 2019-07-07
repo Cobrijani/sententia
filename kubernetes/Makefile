@@ -5,9 +5,9 @@ ORG_NAME ?= cobrijani
 build:
 	${INFO} "Building all images..."
 	${INFO} "Building Gateway..."
-	@ cd ./../gateway && mvn package -Pprod -DskipTests jib:dockerBuild
+	@ cd ./../sentway && mvn package -Pprod -DskipTests jib:dockerBuild
 	${INFO} "Building Blog-app..."
-	@ cd ./../blog-app && mvn package -Pprod -DskipTests jib:dockerBuild
+	@ cd ./../blog && mvn package -Pprod -DskipTests jib:dockerBuild
 	${INFO} "Building Follower-app..."
 	@ cd ./../follower && mvn package -Pprod -DskipTests jib:dockerBuild
 	${INFO} "Build Complete!"
@@ -19,7 +19,7 @@ clean:
 
 tag:
 	${INFO} "Tagging images..."
-	@ docker tag gateway $(ORG_NAME)/gateway
+	@ docker tag sentway $(ORG_NAME)/sentway
 	@ docker tag blog $(ORG_NAME)/blog
 	@ docker tag follower $(ORG_NAME)/follower
 	${INFO} "Tagging complete!"	
