@@ -1,13 +1,13 @@
 {
   "generator-jhipster": {
     "promptValues": {
-      "packageName": "com.github.cobrijani.gateway"
+      "packageName": "com.github.cobrijani.sententia"
     },
     "jhipsterVersion": "6.1.2",
     "applicationType": "gateway",
     "baseName": "gateway",
-    "packageName": "com.github.cobrijani.gateway",
-    "packageFolder": "com/github/cobrijani/gateway",
+    "packageName": "com.github.cobrijani.sententia",
+    "packageFolder": "com/github/cobrijani/sententia",
     "serverPort": "8080",
     "authenticationType": "jwt",
     "cacheProvider": "hazelcast",

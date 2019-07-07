@@ -16,7 +16,7 @@
 logging:
   level:
     ROOT: INFO
-    com.github.cobrijani.gateway: INFO
+    com.github.cobrijani.sententia: INFO
     io.github.jhipster: INFO
 
 eureka:
