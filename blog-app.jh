@@ -1,0 +1,103 @@
+/**
+ * Gateway 
+ * @author Stefan Bratic
+ */
+application {
+    config {
+        baseName sentway
+        applicationType gateway
+        serverPort 8080
+        buildTool maven
+        databaseType sql
+        devDatabaseType h2Disk
+        prodDatabaseType postgresql
+        packageName com.github.cobrijani.sententia
+        serviceDiscoveryType eureka
+        useSass true
+        clientFramework angularX
+        authenticationType jwt
+        enableHibernateCache true
+        clientPackageManager npm
+        cacheProvider hazelcast
+    }
+    entities *
+}
+
+/**
+ * Blog microservice
+ * @author Stefan Bratic
+ */
+application {
+    config {
+        baseName blog
+        applicationType microservice
+        serverPort 8081
+        buildTool maven
+        packageName com.github.cobrijani.sententia
+        databaseType mongodb
+        devDatabaseType mongodb
+        prodDatabaseType mongodb
+        serviceDiscoveryType eureka
+        authenticationType jwt
+        cacheProvider hazelcast
+        skipClient true
+        skipUserManagement true
+    }
+    entities Blog
+}
+
+/**
+ * Follower microservice
+ * @author Stefan Bratic
+ */
+application {
+    config {
+        baseName follower
+        applicationType microservice
+        serverPort 8082
+        buildTool maven
+        packageName com.github.cobrijani.sententia
+        authenticationType jwt
+        cacheProvider hazelcast
+        databaseType no
+        devDatabaseType no
+        prodDatabaseType no
+        serviceDiscoveryType eureka
+        skipClient true
+        skipServer true
+        skipUserManagement true
+    }
+}
+
+deployment {
+  deploymentType kubernetes
+  appsFolders [blog, follower, sentway]
+  dockerRepositoryName "cobrijani"
+  serviceDiscoveryType eureka
+  kubernetesNamespace sententia
+}
+
+deployment {
+  deploymentType docker-compose
+  appsFolders [blog, follower, sentway]
+  dockerRepositoryName "cobrijani"
+}
+
+/** Entity representing a blog */
+entity Blog {
+    id String
+	title String
+    type Markup
+    category String
+    authorId String
+    authorName String
+    created ZonedDateTime
+    modified ZonedDateTime
+    content TextBlob
+}
+enum Markup {
+    PLAIN, HTML, MARKDOWN
+}
+dto Blog with mapstruct
+service Blog with serviceImpl
+paginate Blog with pagination
