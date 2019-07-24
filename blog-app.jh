@@ -20,6 +20,7 @@ application {
         clientPackageManager npm
         cacheProvider hazelcast
     }
+    entities *
 }
 
 /**
@@ -45,6 +46,7 @@ application {
     entities Blog
 }
 
+
 /**
  * Follower microservice
  * @author Stefan Bratic
@@ -68,19 +70,6 @@ application {
     }
 }
 
-deployment {
-  deploymentType kubernetes
-  appsFolders [blog, follower, sentway]
-  dockerRepositoryName "cobrijani"
-  serviceDiscoveryType eureka
-  kubernetesNamespace sententia
-}
-
-deployment {
-  deploymentType docker-compose
-  appsFolders [blog, follower, sentway]
-  dockerRepositoryName "cobrijani"
-}
 
 /** Entity representing a blog */
 entity Blog {
@@ -94,9 +83,24 @@ entity Blog {
     modified ZonedDateTime
     content TextBlob
 }
+microservice Blog with blog
 enum Markup {
     PLAIN, HTML, MARKDOWN
 }
 dto Blog with mapstruct
 service Blog with serviceImpl
 paginate Blog with pagination
+
+deployment {
+  deploymentType kubernetes
+  appsFolders [blog, follower, sentway]
+  dockerRepositoryName "cobrijani"
+  serviceDiscoveryType eureka
+  kubernetesNamespace sententia
+}
+
+deployment {
+  deploymentType docker-compose
+  appsFolders [blog, follower, sentway]
+  dockerRepositoryName "cobrijani"
+}
