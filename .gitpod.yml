@@ -5,4 +5,4 @@ ports:
   - port: 9000
   - port: 3001
 tasks:
-  - command: "cd gateway && npm install"
+  - command: "cd sentway && npm install"
