@@ -37,7 +37,7 @@
         }
     ],
     "relationships": [],
-    "changelogDate": "20190724113520",
+    "changelogDate": "20190724115420",
     "javadoc": "Entity representing a blog",
     "entityTableName": "blog",
     "dto": "mapstruct",
@@ -48,5 +48,6 @@
     "clientRootFolder": "",
     "applications": [
         "blog"
-    ]
+    ],
+    "microserviceName": "blog"
 }
