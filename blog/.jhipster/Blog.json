@@ -37,7 +37,7 @@
         }
     ],
     "relationships": [],
-    "changelogDate": "20190707194607",
+    "changelogDate": "20190724113101",
     "javadoc": "Entity representing a blog",
     "entityTableName": "blog",
     "dto": "mapstruct",
@@ -47,7 +47,6 @@
     "fluentMethods": true,
     "clientRootFolder": "",
     "applications": [
-        "sentway",
         "blog"
     ]
 }

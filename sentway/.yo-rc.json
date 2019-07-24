@@ -38,7 +38,5 @@
     "dtoSuffix": "DTO",
     "otherModules": []
   },
-  "entities": [
-    "Blog"
-  ]
+  "entities": []
 }
