@@ -20,7 +20,6 @@ application {
         clientPackageManager npm
         cacheProvider hazelcast
     }
-    entities *
 }
 
 /**
