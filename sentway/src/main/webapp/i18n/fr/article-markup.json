@@ -1,0 +1,10 @@
+{
+  "sentwayApp": {
+    "Markup": {
+      "null": "",
+      "PLAIN": "PLAIN",
+      "HTML": "HTML",
+      "MARKDOWN": "MARKDOWN"
+    }
+  }
+}
