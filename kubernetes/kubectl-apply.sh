@@ -11,7 +11,7 @@ logSummary(){
 
 kubectl apply -f namespace.yml
 kubectl apply -f registry/
-kubectl apply -f blog/
+kubectl apply -f article/
 kubectl apply -f follower/
 kubectl apply -f sentway/
 

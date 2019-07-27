@@ -1,0 +1,47 @@
+{
+    "name": "Mute",
+    "fields": [
+        {
+            "fieldName": "created",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "person",
+            "otherEntityRelationshipName": "mute",
+            "relationshipName": "muter",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "person",
+            "otherEntityRelationshipName": "mute",
+            "relationshipName": "mutee",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "person",
+            "otherEntityRelationshipName": "mute",
+            "relationshipName": "person",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190727155618",
+    "entityTableName": "mute",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": [
+        "sentway",
+        "follower"
+    ],
+    "microserviceName": "follower"
+}

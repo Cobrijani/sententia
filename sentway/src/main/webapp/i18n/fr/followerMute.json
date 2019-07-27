@@ -1,0 +1,29 @@
+{
+  "sentwayApp": {
+    "followerMute": {
+      "home": {
+        "title": "Mutes",
+        "createLabel": "Créer un nouveau Mute",
+        "createOrEditLabel": "Créer ou éditer un Mute",
+        "notFound": "Aucun Mute trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Mute {{ id }} ?"
+      },
+      "detail": {
+        "title": "Mute"
+      },
+      "created": "Created",
+      "muter": "Muter",
+      "mutee": "Mutee",
+      "person": "Person"
+    }
+  },
+  "followerApp": {
+    "followerMute": {
+      "created": "Un nouveau Mute a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Mute avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Mute avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "sentwayApp": {
+    "followerPerson": {
+      "home": {
+        "title": "People",
+        "createLabel": "Create a new Person",
+        "createOrEditLabel": "Create or edit a Person",
+        "notFound": "No Person found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Person {{ id }}?"
+      },
+      "detail": {
+        "title": "Person"
+      },
+      "userId": "User Id",
+      "followersAmount": "Followers Amount",
+      "followedAmount": "Followed Amount",
+      "follow": "Follow",
+      "mute": "Mute",
+      "block": "Block",
+      "follow": "Follow",
+      "follow": "Follow",
+      "mute": "Mute",
+      "mute": "Mute",
+      "block": "Block",
+      "block": "Block"
+    }
+  },
+  "followerApp": {
+    "followerPerson": {
+      "created": "A new Person is created with identifier {{ param }}",
+      "updated": "A Person is updated with identifier {{ param }}",
+      "deleted": "A Person is deleted with identifier {{ param }}"
+    }
+  }
+}

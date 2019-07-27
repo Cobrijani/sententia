@@ -39,6 +39,10 @@
     "otherModules": []
   },
   "entities": [
-    "Blog"
+    "Article",
+    "Person",
+    "Follow",
+    "Mute",
+    "Block"
   ]
 }

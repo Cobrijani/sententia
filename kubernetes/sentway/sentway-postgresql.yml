@@ -7,7 +7,7 @@ metadata:
     app: sentway-postgresql
 type: Opaque
 data:
-  postgresql-password: MWYxcWN5OHE=
+  postgresql-password: OWRpZXhkc2Y=
 ---
 apiVersion: apps/v1
 kind: Deployment

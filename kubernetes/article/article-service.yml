@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: article
+  namespace: sententia
+  labels:
+    app: article
+spec:
+  selector:
+    app: article
+  ports:
+    - name: http
+      port: 8081
