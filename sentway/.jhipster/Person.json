@@ -1,0 +1,101 @@
+{
+    "name": "Person",
+    "fields": [
+        {
+            "fieldName": "userId",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "followersAmount",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "followedAmount",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "follow",
+            "otherEntityRelationshipName": "person",
+            "relationshipName": "follow"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "mute",
+            "otherEntityRelationshipName": "person",
+            "relationshipName": "mute"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "block",
+            "otherEntityRelationshipName": "person",
+            "relationshipName": "block"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "follow",
+            "otherEntityRelationshipName": "follower",
+            "relationshipName": "follow",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "follow",
+            "otherEntityRelationshipName": "followee",
+            "relationshipName": "follow",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "mute",
+            "otherEntityRelationshipName": "muter",
+            "relationshipName": "mute",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "mute",
+            "otherEntityRelationshipName": "mutee",
+            "relationshipName": "mute",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "block",
+            "otherEntityRelationshipName": "blocker",
+            "relationshipName": "block",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "block",
+            "otherEntityRelationshipName": "blockee",
+            "relationshipName": "block",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20190727155616",
+    "entityTableName": "person",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": [
+        "sentway",
+        "follower"
+    ],
+    "microserviceName": "follower"
+}

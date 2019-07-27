@@ -5,8 +5,8 @@
 You will need to push your image to a registry. If you have not done so, use the following commands to tag and push the images:
 
 ```
-$ docker image tag blog cobrijani/blog
-$ docker push cobrijani/blog
+$ docker image tag article cobrijani/article
+$ docker push cobrijani/article
 $ docker image tag follower cobrijani/follower
 $ docker push cobrijani/follower
 $ docker image tag sentway cobrijani/sentway

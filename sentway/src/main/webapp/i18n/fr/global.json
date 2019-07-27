@@ -8,6 +8,11 @@
       "entities": {
         "main": "Entités",
         "blogBlog": "Blog",
+        "articleArticle": "Article",
+        "followerPerson": "Person",
+        "followerFollow": "Follow",
+        "followerMute": "Mute",
+        "followerBlock": "Block",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

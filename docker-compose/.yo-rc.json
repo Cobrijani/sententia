@@ -5,7 +5,7 @@
     "monitoring": "no",
     "directoryPath": "../",
     "appsFolders": [
-      "blog",
+      "article",
       "follower",
       "sentway"
     ],

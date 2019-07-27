@@ -1,0 +1,45 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="follow">
+            <h2><span jhiTranslate="sentwayApp.followerFollow.detail.title">Follow</span> {{follow.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="sentwayApp.followerFollow.created">Created</span></dt>
+                <dd>
+                    <span>{{follow.created}}</span>
+                </dd>
+                <dt><span jhiTranslate="sentwayApp.followerFollow.follower">Follower</span></dt>
+                <dd>
+                    <div *ngIf="follow.follower">
+                        <a [routerLink]="['/person', follow.follower?.id, 'view']">{{follow.follower?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="sentwayApp.followerFollow.followee">Followee</span></dt>
+                <dd>
+                    <div *ngIf="follow.followee">
+                        <a [routerLink]="['/person', follow.followee?.id, 'view']">{{follow.followee?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="sentwayApp.followerFollow.person">Person</span></dt>
+                <dd>
+                    <div *ngIf="follow.person">
+                        <a [routerLink]="['/person', follow.person?.id, 'view']">{{follow.person?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/follow', follow.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

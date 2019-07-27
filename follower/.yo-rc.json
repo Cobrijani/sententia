@@ -11,7 +11,7 @@
     "serverPort": "8082",
     "authenticationType": "jwt",
     "cacheProvider": "hazelcast",
-    "enableHibernateCache": false,
+    "enableHibernateCache": true,
     "websocket": false,
     "databaseType": "no",
     "devDatabaseType": "no",
@@ -46,5 +46,10 @@
     ],
     "nativeLanguage": "en"
   },
-  "entities": []
+  "entities": [
+    "Person",
+    "Mute",
+    "Block",
+    "Follow"
+  ]
 }

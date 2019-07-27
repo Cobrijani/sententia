@@ -12,8 +12,8 @@ Launch all your infrastructure by running: `docker-compose up -d`.
 
 ### Applications and dependencies:
 
-- blog (microservice application)
-- blog's mongodb database
+- article (microservice application)
+- article's mongodb database
 - follower (microservice application)
 - follower's no database
 - sentway (gateway application)
