@@ -1,0 +1,38 @@
+{
+  "generator-jhipster": {
+    "databaseType": "no",
+    "devDatabaseType": "no",
+    "enableHibernateCache": false,
+    "enableSwaggerCodegen": false,
+    "enableTranslation": true,
+    "jhiPrefix": "jhi",
+    "languages": [
+      "en",
+      "fr"
+    ],
+    "messageBroker": false,
+    "nativeLanguage": "en",
+    "packageName": "com.github.cobrijani.sententia",
+    "packageFolder": "com/github/cobrijani/sententia",
+    "prodDatabaseType": "no",
+    "searchEngine": false,
+    "serviceDiscoveryType": "eureka",
+    "skipClient": true,
+    "testFrameworks": [],
+    "websocket": false,
+    "baseName": "follower",
+    "applicationType": "microservice",
+    "serverPort": "8082",
+    "buildTool": "maven",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "skipUserManagement": true,
+    "jhipsterVersion": "6.1.2",
+    "clientPackageManager": "npm",
+    "jwtSecretKey": "NzkxYjU4YTZhMTU5ZWZlZmY5MDk4N2IxMGQ5NGE0MGRhNzUwNjJjOTEyNWQzNThmZjgyZGQ0MGQ3NjJlZWIzMzhkMjBkZTQ5N2MwM2VmNGRiOTNlYzMwZDE1NWFjNzM0ZTk5MmVhMzFiNjJjZjNkOTFhZGU5NGJhMjUyYTY1OWI=",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": []
+  },
+  "entities": []
+}
