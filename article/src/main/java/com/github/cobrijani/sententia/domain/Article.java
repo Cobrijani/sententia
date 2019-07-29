@@ -1,6 +1,4 @@
 package com.github.cobrijani.sententia.domain;
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -52,7 +50,7 @@ public class Article implements Serializable {
     @Field("published")
     private ZonedDateTime published;
 
-    
+
     @Field("content")
     private String content;
 
